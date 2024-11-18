@@ -1,3 +1,128 @@
 # data_nexify_company
-## Deployment : <a href="https://data-nexify.vercel.app/">Demo</a>
-## Backend Deploye link : https://data-nexify.onrender.com
+#### Deployment : <a href="https://data-nexify.vercel.app/">Demo</a>
+#### Backend Deploye link : https://data-nexify.onrender.com
+
+# Important Information !!!
+
+I have deployed the frontend of this project on Vercel and the backend on Render. It's working fine, but when used only for the first time, upon starting and signing up with Google, it might take around 1 or half minutes initially. This delay is because it is deployed on Render, which causes the first-time startup delay. Otherwise, everything is working fine. In case any issue arises, there is a 0% chance of that happening. However, I have uploaded screenshots below for you to review.
+
+# Google Calendar Event Scheduler
+
+This project is an event scheduling application built to integrate with Google Calendar. Developed using Vite with React and Vanila css, the app allows users to easily schedule and manage events, providing a seamless interface that mimics the functionality of Google Calendar. The project focuses on delivering a highly responsive and user-friendly experience across various devices.
+
+## 📸 Screenshots
+
+Below are some screenshots showcasing the various views of the application:
+
+### Desktop View
+
+###  ( Hero )
+<img src="Screenshots\d1.png"/>
+
+###  ( Templates )
+<img src="Screenshots\d2.png"/>
+
+###  ( Features )
+<img src="Screenshots\d3.png"/>
+
+###  ( Comments )
+<img src="Screenshots\d4.png"/>
+
+###  ( Footer )
+<img src="Screenshots\d5.png"/>
+
+
+### Mobile View
+
+###  ( Hero )
+<img src="Screenshots\m1.png"/>
+
+###  ( Hamburger )
+<img src="Screenshotsm2.png"/>
+
+
+###  ( Templates )
+<img src="Screenshots\m3.png"/>
+
+###  ( Descriptlion )
+<img src="Screenshots\m4.png"/>
+
+###  ( Features )
+<img src="Screenshots\m5.png"/>
+
+###  ( Footer )
+<img src="Screenshots\m6.png"/>
+
+## 🛠️ Technologies Used
+List and provide a brief overview of the technologies used in the project.
+
+- React
+- HTML5
+- CSS3
+- JavaScript
+- Vite - A fast build tool for modern web applications.
+- React-icons for just icons
+- vanilla CSS
+
+## 🚀 Getting Started
+
+To get a local copy of this project up and running, follow these steps:
+
+### Prerequisites
+
+Make sure you have **Node.js** and **npm** installed on your machine.
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/mohdaamil120/data_nexify_company.git
+   cd project-name
+   ```
+## Install dependencies:
+
+```bash
+npm install
+```
+```Run the development server:
+npm run dev
+```
+```Build the project for production:
+npm run build
+```
+```Preview the production build:
+npm run preview
+```
+## Project Structure
+
+## Project Structure
+```plaintext
+src/
+├─ components
+  ├─ All component
+├─ utils
+  ├─ CustomAlert 
+├─ App.css
+├─ App.jsx
+├─ index.css
+├─ main.jsx
+```
+
+
+## 🖌️ Features
+The layout adapts seamlessly across desktop.
+High Performance: Built with Vite for lightning-fast load times and hot module replacement.
+## 🌟 Usage
+View the app locally: Start the development server by running npm run dev and visit http://localhost:5173 in your browser.
+Deploying the app: Use npm run build to create an optimized production build.
+
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome! Feel free to fork the project and submit pull requests.
+
+## 📄 License
+This project is open source and available.
+
+## 🧑‍💻 Author
+Mohd Aamil – <a href="https://github.com/mohdaamil120"> Github Profile</a> 
+
+
