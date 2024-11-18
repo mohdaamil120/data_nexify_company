@@ -48,7 +48,7 @@ const EventCreator = ({ userId ,setIsFetching }) => {
     try {
       handleCancelPopUp()
       setIsFetching(true);
-      const response = await axios.post('http://localhost:808/calendar/create-event', {
+      const response = await axios.post('https://data-nexify.onrender.com/calendar/create-event', {
         userId,
         event
       });

@@ -20,7 +20,7 @@ const App = () => {
     const code = urlParams.get("code");
     if (code) {
       axios
-        .get(`http://localhost:8080/auth/google-callback?code=${code}`)
+        .get(`https://data-nexify.onrender.com/auth/google-callback?code=${code}`)
         .then((response) => {
           setUser(response.data.user);
           window.history.replaceState({}, document.title, "/");
@@ -30,7 +30,7 @@ const App = () => {
   }, []);
 
   const handleSignIn = async () => {
-    const { data } = await axios.get("http://localhost:8080/auth/google-url");
+    const { data } = await axios.get("https://data-nexify.onrender.com/auth/google-url");
     window.location.href = data.url;
   };
 

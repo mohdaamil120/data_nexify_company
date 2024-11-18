@@ -10,7 +10,7 @@ const EventTable = ({ userId, isFetching }) => {
 
   const fetchEvents = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/calendar/events/${userId}`);
+      const response = await axios.get(`https://data-nexify.onrender.com/calendar/events/${userId}`);
       setEvents(response.data.userEvents || []);
     } catch (error) {
       console.error("Failed to fetch events:", error);
