@@ -1,4 +1,4 @@
-/* 
+
 
 .meeting-container {
   padding: 20px;
@@ -57,94 +57,11 @@
   color: #f99789; 
   font-weight: bold;
   margin-right: 10px;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Base styles */
-.meeting-container {
-  padding: 20px;
-  background-color: #feeaeb;
-  border-radius: 10px;
-  height: 50vh;
-  overflow-y: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  scrollbar-width: none; 
 }
 
-.calendar-title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #f99789;
-  margin-bottom: 15px;
-}
 
-.meeting-card {
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
-.event-list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.event {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #f99789;
-}
-
-.details {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.details-guests {
-  font-size: 0.8rem;
-  color: #333;
-}
-
-.time {
-  font-size: 1rem;
-  color: #f99789;
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-/* Responsive Design */
 
 /* For tablets and smaller screens */
 @media (max-width: 768px) {

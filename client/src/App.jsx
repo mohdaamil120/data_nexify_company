@@ -160,14 +160,14 @@ const App = () => {
         <div className="parent-div">
           {/* Sidebar */}
           <div className="sidebar">
-            <Sidebar />
+            <Sidebar  />
           </div>
 
           {/* Main Content */}
           <div className="main-content">
-            <button onClick={handleLogout} className="logout-btn">
+            {/* <button onClick={handleLogout} className="logout-btn">
               Logout
-            </button>
+            </button> */}
             <EventCreator userId={user._id} setIsFetching={setIsFetching} />
             <MeetingCard />
             <EventTable userId={user._id} isFetching={isFetching} />
@@ -175,7 +175,7 @@ const App = () => {
 
           {/* Calendar */}
           <div className="calendar">
-            <Calendar />
+            <Calendar  />
           </div>
         </div>
       )}

@@ -1,4 +1,4 @@
-/* .event-table-container {
+.event-table-container {
     margin-top: 20px;
   }
   
@@ -63,7 +63,7 @@
     background-color: #ff2828
   }
   
-   */
+  
 
 
 
@@ -75,70 +75,6 @@
 
 
 
-
-
-
-   /* Event Table Styles */
-
-/* Table container */
-.event-table-container {
-  padding: 20px;
-  margin-top: 20px;
-  overflow-x: auto;
-}
-
-/* Table styles */
-.event-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-}
-
-.event-table th, .event-table td {
-  padding: 12px;
-  text-align: left;
-  border: 1px solid #ddd;
-}
-
-.event-table th {
-  background-color: #f4f4f4;
-  font-weight: bold;
-}
-
-/* Event table rows */
-.event-table tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.event-table tr:hover {
-  background-color: #f1f1f1;
-}
-
-/* Button styling in table */
-.event-table .edit-btn, .event-table .delete-btn {
-  padding: 8px 12px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.event-table .edit-btn {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.event-table .delete-btn {
-  background-color: #f44336;
-  color: white;
-}
-
-.event-table .edit-btn:hover {
-  background-color: #45a049;
-}
-
-.event-table .delete-btn:hover {
-  background-color: #f1352e;
-}
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {

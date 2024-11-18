@@ -1,4 +1,4 @@
-/* 
+
 
 .popup {
     position: fixed;
@@ -97,84 +97,19 @@ form{
     display: flex;
     justify-content: center;
     background-color: #f1e2e2;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Event Creator Styles */
-
-/* Popup form container */
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none; /* Hidden by default */
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
 }
 
-/* Popup form content */
-.popup-form {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 500px;
-  width: 100%;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
 
-/* Popup close button */
-.popup .close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: transparent;
-  border: none;
-  font-size: 20px;
-  color: #333;
-  cursor: pointer;
-}
 
-/* Form fields and button */
-.popup-form input, .popup-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
 
-.popup-form button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
 
-.popup-form button:hover {
-  background-color: #45a049;
-}
+
+
+
+
+
+
+
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {

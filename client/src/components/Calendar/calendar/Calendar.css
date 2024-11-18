@@ -1,4 +1,4 @@
-/* .calendar {
+.calendar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,8 +7,6 @@
     flex: 1;
     border-radius: 10px;
     padding: 20px;
-
-
   }
   
   .header h2 {
@@ -22,9 +20,9 @@
     background: white;
     padding: 20px;
     border-radius: 10px;
-    width: 100%;
-    max-height:550px;
-    border:  1px solid red;
+    /* max-width: 100%; */
+    width: auto;
+    /* max-height:550px; */
   } 
   
   .date-selector {
@@ -153,7 +151,7 @@
   .create-btn:hover, .book-btn:hover {
     background-color: #ff2828;
   }
-   */
+  
 
 
 
@@ -174,163 +172,6 @@
 
 
 
-
-
-/* Base styles */
-.calendar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #fef2f2;
-  flex: 1;
-  border-radius: 10px;
-  padding: 20px;
-}
-
-.header h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-}
-
-.month-view {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  flex: 1;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 100%;
-  max-height: 550px;
-  border: 1px solid red;
-}
-
-.date-selector {
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.toggle-btn {
-  cursor: pointer;
-  color: white;
-  padding: 10px;
-  border: none;
-  background-color: #ff5757;
-  border-radius: 8px;
-  width: 100px;
-  transition: background-color 0.3s ease;
-}
-
-.toggle-btn:hover {
-  background-color: #ff2828;
-}
-
-.calendar-widget {
-  text-align: center;
-}
-
-.calendar-widget h3 {
-  margin: 20px 0;
-  font-size: 1.3rem;
-}
-
-.days-grid {
-  display: grid;
-  gap: 10px;
-}
-
-.weekdays {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  margin-bottom: 10px;
-}
-
-.weekday {
-  font-weight: bold;
-  color: #555;
-}
-
-.days {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-}
-
-.day {
-  padding: 15px;
-  text-align: center;
-  cursor: pointer;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-}
-
-.day:hover {
-  background-color: #ff5757;
-}
-
-.day.empty {
-  background-color: transparent;
-}
-
-.navigation {
-  margin-top: 20px;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-icon {
-  font-size: 24px;
-  cursor: pointer;
-  color: #ff2828;
-}
-
-.nav-icon:hover {
-  color: #ca0808;
-}
-
-.month-selector, .year-selector {
-  display: flex;
-  flex-direction: column;
-  margin: 10px 0;
-}
-
-.month-selector button, .year-selector button {
-  padding: 8px;
-  margin: 5px 0;
-  cursor: pointer;
-  background-color: #ff5757;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.month-selector button:hover, .year-selector button:hover {
-  background-color: #ff2828;
-}
-
-.button-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
-  transition: background-color 0.3s ease;
-}
-
-.create-btn, .book-btn {
-  padding: 10px 20px;
-  cursor: pointer;
-  background-color: #ff5757;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-}
-
-.create-btn:hover, .book-btn:hover {
-  background-color: #ff2828;
-}
-
-/* Responsiveness */
 
 @media (max-width: 768px) {
   .calendar {
@@ -343,7 +184,8 @@
 
   .month-view {
     padding: 15px;
-    max-height: 400px;
+    /* max-height: 400px; */
+
   }
 
   .toggle-btn {
@@ -357,6 +199,8 @@
 
   .days-grid {
     grid-template-columns: repeat(7, 1fr);
+    display: flex;
+    flex-direction: column;
   }
 
   .day {
@@ -386,6 +230,9 @@
 @media (max-width: 480px) {
   .calendar {
     padding: 10px;
+    justify-content: center;
+    align-items: center;
+    /* display: none; */
   }
 
   .header h2 {
@@ -394,7 +241,9 @@
 
   .month-view {
     padding: 10px;
-    max-height: 300px;
+    max-height: 550px;
+    /* border: 5px solid red; */
+    width: 300px;
   }
 
   .toggle-btn {
@@ -408,16 +257,20 @@
 
   .days-grid {
     grid-template-columns: repeat(7, 1fr);
+    display: flex;
+    flex-direction: column;
   }
 
   .day {
     padding: 10px;
     font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
   }
 
   .navigation {
-    margin-top: 10px;
-    gap: 10px;
+    margin-top: 20px;
+    gap: 20px;
   }
 
   .nav-icon {
@@ -440,7 +293,8 @@
 .day.highlight {
   background-color: #ff7f7f;
   color: white;
-  border-radius: 50%;
+  border-radius: 100%;
   font-weight: bold;
+
 }
 
