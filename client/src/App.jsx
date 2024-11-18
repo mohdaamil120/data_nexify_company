@@ -150,7 +150,7 @@ const App = () => {
   };
 
   return (
-    <div className="main-container">
+    <div className = {`main-container ${user ? "auto-height" : "full-height"}`}>
       {!user ? (
         <button className="login-btn" onClick={handleSignIn}>
           <FcGoogle size={50} />
