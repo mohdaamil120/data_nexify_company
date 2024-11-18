@@ -14,44 +14,44 @@ This project is an event scheduling application built to integrate with Google C
 
 Below are some screenshots showcasing the various views of the application:
 
-### Desktop View
+## Desktop View
 
 ###  ( Hero )
-<img src="Screenshots\d1.png"/>
+<img src="client/Screenshots\d1.png"/>
 
-###  ( Templates )
-<img src="Screenshots\d2.png"/>
+###  ( Event Pop up )
+<img src="client/Screenshots\d2.png"/>
 
-###  ( Features )
-<img src="Screenshots\d3.png"/>
+###  ( Signin )
+<img src="client/Screenshots\d3.png"/>
 
-###  ( Comments )
-<img src="Screenshots\d4.png"/>
+###  ( Custom Alert )
+<img src="client/Screenshots\d4.png"/>
 
-###  ( Footer )
-<img src="Screenshots\d5.png"/>
+###  ( Events Table )
+<img src="client/Screenshots\d5.png"/>
 
 
-### Mobile View
+## Mobile View
 
 ###  ( Hero )
-<img src="Screenshots\m1.png"/>
+<img src="client/Screenshots\m1.png"/>
 
-###  ( Hamburger )
-<img src="Screenshotsm2.png"/>
+###  ( Meetings )
+<img src="client/Screenshots\m2.png"/>
 
 
-###  ( Templates )
-<img src="Screenshots\m3.png"/>
+###  ( Event list )
+<img src="client/Screenshots\m3.png"/>
 
-###  ( Descriptlion )
-<img src="Screenshots\m4.png"/>
+###  ( Calendar )
+<img src="client/Screenshots\m4.png"/>
 
-###  ( Features )
-<img src="Screenshots\m5.png"/>
+###  ( Sign in )
+<img src="client/Screenshots\m5.png"/>
 
-###  ( Footer )
-<img src="Screenshots\m6.png"/>
+###  ( Event Pop up )
+<img src="client/Screenshots\m6.png"/>
 
 ## 🛠️ Technologies Used
 List and provide a brief overview of the technologies used in the project.
