@@ -6,7 +6,8 @@ const user = require('../models/user');
 const oauth2Client = new google.auth.OAuth2(
   process.env.GOOGLE_CLIENT_ID,
   process.env.GOOGLE_CLIENT_SECRET,
-  `http://localhost:5173`
+  // `http://localhost:5173`
+  `https://data-nexify.vercel.app/`
 );
 
 // Generate Auth URL
