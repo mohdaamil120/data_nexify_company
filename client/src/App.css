@@ -81,21 +81,21 @@ body {
   transform: scale(1.1);
 }
 
-
+/* 
 .sidebar {
-  /* max-width:25% ; */
+  max-width:25% ; */
   /* width: auto; */
   /* box-sizing: border-box; */
-  /* overflow: hidden; */
+  /* overflow: hidden;
 }
 
 .calendar {
-  /* max-width:30% ; */
+  max-width:30% ; */
   /* width: auto; */
   /* box-sizing: border-box; */
   /* overflow: hidden; */
-  /* border: 1px solid red; */
-}
+  /* border: 1px solid red;
+} */
 
 
 
