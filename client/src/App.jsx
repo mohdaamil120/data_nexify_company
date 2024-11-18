@@ -17,15 +17,13 @@ const App = () => {
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    console.log("urlParams ",urlParams)
     const code = urlParams.get("code");
-    console.log("code ",code)
     if (code) {
       axios
         .get(`https://data-nexify.onrender.com/auth/google-callback?code=${code}`)
         .then((response) => {
           setUser(response.data.user);
-          console.log("response.data.user ",response.data.user)
+         
           window.history.replaceState({}, document.title, "/");
         })
         .catch((error) => console.error("Error during token exchange", error));
@@ -35,8 +33,7 @@ const App = () => {
   const handleSignIn = async () => {
     const { data } = await axios.get("https://data-nexify.onrender.com/auth/google-url");
     window.location.href = data.url;
-    console.log("data 35 iline no " ,data)
-    console.log("data 35 iline no " ,data.url)
+  
   };
 
   return (
