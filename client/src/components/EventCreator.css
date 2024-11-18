@@ -126,13 +126,11 @@ form{
 @media (max-width: 480px) {
 
   .popup {
-   
-    width: 80%;
-    height: 100%;
+   margin: auto;
   }
 
   .popup-form {
-    width: 100%;
+    width: 85%;
     padding: 10px;
   }
 
