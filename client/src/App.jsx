@@ -53,8 +53,8 @@ const App = () => {
   
       if (code) {
         axios
-          // .get(`${import.meta.env.VITE_AUTH_BASE_URL}/google-callback?code=${code}`)
-          .get(`https://data-nexify.onrender.com/auth/google-callback?code=${code}`)
+          .get(`${import.meta.env.VITE_AUTH_BASE_URL}/google-callback?code=${code}`)
+          
           .then((response) => {
             const loggedInUser = response.data.user;
             setUser(loggedInUser);
@@ -66,7 +66,7 @@ const App = () => {
           })
           .catch((error) => console.error("Error during token exchange", error));
       }
-    }, [window.location.href]); // Dependency is `window.location.search`
+    }, [window.location.href]); 
     
 
   
@@ -87,7 +87,7 @@ const App = () => {
   const handleSignIn = async () => {
     // const { data } = await axios.get(`${import.meta.env.VITE_AUTH_BASE_URL}/google-url`);
    try {
-    const { data } = await axios.get(`https://data-nexify.onrender.com/auth/google-url`);
+    const { data } = await axios.get(`${import.meta.env.VITE_AUTH_BASE_URL}/google-url`);
     console.log("data from line no. 81 " , data.url)
     window.location.href = data.url;
    } catch (err) {
