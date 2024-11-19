@@ -2,35 +2,52 @@ const { OAuth2Client } = require('google-auth-library');
 const User = require('../models/user');
 const { google } = require('googleapis');
 const user = require('../models/user');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const oauth2Client = new google.auth.OAuth2(
   process.env.GOOGLE_CLIENT_ID,
   process.env.GOOGLE_CLIENT_SECRET,
   // process.env.REDIRECT_LOCAL_URL,
   process.env.REDIRECT_URL,
+  
 );
 
 // Generate Auth URL
-exports.getAuthUrl = (req, res) => {
-  const scopes = ['https://www.googleapis.com/auth/calendar', 'email', 'profile'];
-  const url = oauth2Client.generateAuthUrl({
+exports.getAuthUrl = async(req, res) => {
+  try {
+    const scopes = ['https://www.googleapis.com/auth/calendar', 'email', 'profile'];
+    const url = oauth2Client.generateAuthUrl({
     access_type: 'offline',
     scope: scopes,
   });
-  res.json({ url });
+  res.status(200).send({ url });  
+  } catch (err) {
+    console.log("Error from message catch: ", err)
+    res.status(401).send({"msg":"erro in getting url"})
+  }
+  
 };
 
 
 
 exports.googleCallback = async (req, res) => {
     const { code } = req.query;
-    console.log(code)
+    console.log("code from bacekend line 27",code)
+    if (!code) {
+      console.error("Authorization code is missing.");
+      return res.status(400).json({ error: "Authorization code is missing." });
+    }
     try {
+
       const { tokens } = await oauth2Client.getToken(code);
       oauth2Client.setCredentials(tokens);
   
       const userInfo = await google.oauth2('v2').userinfo.get({ auth: oauth2Client });
       const { id, email } = userInfo.data;
+
+      console.log("tokens :" , tokens)
       console.log("useInfo :" , userInfo)
       console.log("id, email :" , id, email)
       const user = await User.findOneAndUpdate(

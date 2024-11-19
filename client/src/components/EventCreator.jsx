@@ -48,7 +48,7 @@ const EventCreator = ({ userId ,setIsFetching }) => {
     try {
       handleCancelPopUp()
       setIsFetching(true);
-      const response = await axios.post(`${import.meta.env.CALENDAR_BASE_URL}/create-event`, {
+      const response = await axios.post(`${import.meta.env.VITE_CALENDAR_BASE_URL}/create-event`, {
         userId,
         event
       });

@@ -10,7 +10,7 @@ const EventTable = ({ userId, isFetching }) => {
 
   const fetchEvents = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.CALENDAR_BASE_URL}/events/${userId}`);
+      const response = await axios.get(`${import.meta.env.VITE_CALENDAR_BASE_URL}/events/${userId}`);
       setEvents(response.data.userEvents || []);
     } catch (error) {
       console.error("Failed to fetch events:", error);

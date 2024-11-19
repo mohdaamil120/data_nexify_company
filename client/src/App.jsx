@@ -9,11 +9,68 @@ import MeetingCard from "./components/Calendar/MeetingCard/MeetingCard";
 import "./App.css"; // Updated global CSS for the dark theme
 import { FcGoogle } from "react-icons/fc";
 
+
+
 const App = () => {
   const [user, setUser] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
 
+  console.log(`${import.meta.env.VITE_AUTH_BASE_URL}/google-callback?code`)
+  console.log(`${import.meta.env.VITE_AUTH_BASE_URL}/google-url`)
+  
+  // useEffect(() => {
+  //   const urlParams = new URLSearchParams(window.location.search);
+  //   const code = urlParams.get("code");
+  //   console.log("code line 31 ",code)
+  //   if (code) {
+     
+  //     axios
+  //       .get(`${import.meta.env.VITE_AUTH_BASE_URL}/google-callback?code=${code}`)
+  //       .then((response) => {
+  //         const loggedInUser = response.data.user;
+  //         setUser(loggedInUser);
+  //         console.log("code line 39 ",code)
+  //         console.log(`${import.meta.env.VITE_AUTH_BASE_URL}/google-callback?code=${code}`)
+  //         // Save user data to localStorage
+  //         localStorage.setItem("user", JSON.stringify(loggedInUser));
+
+  //         // Clean up the URL
+  //         window.history.replaceState({}, document.title, "/");
+  //       })
+  //       .catch((error) => console.error("Error during token exchange", error));
+  //   }
+  // }, []);
+
+ 
   // Load user from localStorage on initial render
+  
+
+    useEffect(() => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const code = urlParams.get("code");
+      console.log(urlParams)
+      console.log("code from URL:", code); // Logs the `code` from URL when it changes
+  
+      if (code) {
+        axios
+          // .get(`${import.meta.env.VITE_AUTH_BASE_URL}/google-callback?code=${code}`)
+          .get(`https://data-nexify.onrender.com/auth/google-callback?code=${code}`)
+          .then((response) => {
+            const loggedInUser = response.data.user;
+            setUser(loggedInUser);
+            // Save user data to localStorage
+            localStorage.setItem("user", JSON.stringify(loggedInUser));
+            
+            // Clean up the URL by removing the `code` query parameter
+            window.history.replaceState({}, document.title, "/");
+          })
+          .catch((error) => console.error("Error during token exchange", error));
+      }
+    }, [window.location.href]); // Dependency is `window.location.search`
+    
+
+  
+  
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
@@ -21,31 +78,26 @@ const App = () => {
     }
   }, []);
 
+  // console.log("lin 24", import.meta.env.VITE_AUTH_BASE_URL)
+  // console.log("lin 25",import.meta.env.VITE_CALENDAR_BASE_URL)
+
   // Fetch user data when the URL contains a Google callback code
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const code = urlParams.get("code");
-    if (code) {
-      axios
-        .get(`${import.meta.env.AUTH_BASE_URL}/google-callback?code=${code}`)
-        .then((response) => {
-          const loggedInUser = response.data.user;
-          setUser(loggedInUser);
 
-          // Save user data to localStorage
-          localStorage.setItem("user", JSON.stringify(loggedInUser));
-
-          // Clean up the URL
-          window.history.replaceState({}, document.title, "/");
-        })
-        .catch((error) => console.error("Error during token exchange", error));
-    }
-  }, []);
 
   const handleSignIn = async () => {
-    const { data } = await axios.get(`${import.meta.env.AUTH_BASE_URL}/google-url`);
+    // const { data } = await axios.get(`${import.meta.env.VITE_AUTH_BASE_URL}/google-url`);
+   try {
+    const { data } = await axios.get(`https://data-nexify.onrender.com/auth/google-url`);
+    console.log("data from line no. 81 " , data.url)
     window.location.href = data.url;
+   } catch (err) {
+    console.log("catch error line 92" , err)
+   }
   };
+
+
+
+
 
   // const handleLogout = () => {
   //   // Clear user data from state and localStorage
@@ -55,11 +107,13 @@ const App = () => {
 
   return (
     <div className = {`main-container ${user ? "auto-height" : "full-height"}`}>
-      {!user ? (
-        <button className="login-btn" onClick={handleSignIn}>
+      {!user ? (<>        <button className="login-btn" onClick={handleSignIn}>
           <FcGoogle size={50} />
           Sign in with Google
         </button>
+
+        </>
+
       ) : (
         <div className="parent-div">
           {/* Sidebar */}
