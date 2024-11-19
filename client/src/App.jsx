@@ -15,8 +15,8 @@ const App = () => {
   const [user, setUser] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
 
-  console.log(`${import.meta.env.VITE_AUTH_BASE_URL}/google-callback?code`)
-  console.log(`${import.meta.env.VITE_AUTH_BASE_URL}/google-url`)
+  // console.log(`${import.meta.env.VITE_AUTH_BASE_URL}/google-callback?code`)
+  // console.log(`${import.meta.env.VITE_AUTH_BASE_URL}/google-url`)
   
   // useEffect(() => {
   //   const urlParams = new URLSearchParams(window.location.search);
@@ -48,8 +48,8 @@ const App = () => {
     useEffect(() => {
       const urlParams = new URLSearchParams(window.location.search);
       const code = urlParams.get("code");
-      console.log(urlParams)
-      console.log("code from URL:", code); // Logs the `code` from URL when it changes
+      // console.log(urlParams)
+      // console.log("code from URL:", code); // Logs the `code` from URL when it changes
   
       if (code) {
         axios
@@ -88,7 +88,7 @@ const App = () => {
     // const { data } = await axios.get(`${import.meta.env.VITE_AUTH_BASE_URL}/google-url`);
    try {
     const { data } = await axios.get(`${import.meta.env.VITE_AUTH_BASE_URL}/google-url`);
-    console.log("data from line no. 81 " , data.url)
+    // console.log("data from line no. 81 " , data.url)
     window.location.href = data.url;
    } catch (err) {
     console.log("catch error line 92" , err)
@@ -107,14 +107,14 @@ const App = () => {
 
   return (
     <div className = {`main-container ${user ? "auto-height" : "full-height"}`}>
-      {!user ? (<>        <button className="login-btn" onClick={handleSignIn}>
+      {/* {!user ? (<>        <button className="login-btn" onClick={handleSignIn}>
           <FcGoogle size={50} />
           Sign in with Google
         </button>
 
         </>
 
-      ) : (
+      ) : ( */}
         <div className="parent-div">
           {/* Sidebar */}
           <div className="sidebar">
@@ -126,9 +126,11 @@ const App = () => {
             {/* <button onClick={handleLogout} className="logout-btn">
               Logout
             </button> */}
-            <EventCreator userId={user._id} setIsFetching={setIsFetching} />
+            {/* <EventCreator userId={user._id} setIsFetching={setIsFetching} /> */}
+            <EventCreator  setIsFetching={setIsFetching} />
             <MeetingCard />
-            <EventTable userId={user._id} isFetching={isFetching} />
+            {/* <EventTable userId={user._id} isFetching={isFetching} /> */}
+            <EventTable  isFetching={isFetching} />
           </div>
 
           {/* Calendar */}
@@ -136,7 +138,7 @@ const App = () => {
             <Calendar  />
           </div>
         </div>
-      )}
+      {/* )} */}
     </div>
   );
 };

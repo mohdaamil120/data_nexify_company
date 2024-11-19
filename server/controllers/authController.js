@@ -34,7 +34,7 @@ exports.getAuthUrl = async(req, res) => {
 
 exports.googleCallback = async (req, res) => {
     const { code } = req.query;
-    console.log("code from bacekend line 27",code)
+    // console.log("code from bacekend line 27",code)
     if (!code) {
       console.error("Authorization code is missing.");
       return res.status(400).json({ error: "Authorization code is missing." });
@@ -47,9 +47,9 @@ exports.googleCallback = async (req, res) => {
       const userInfo = await google.oauth2('v2').userinfo.get({ auth: oauth2Client });
       const { id, email } = userInfo.data;
 
-      console.log("tokens :" , tokens)
-      console.log("useInfo :" , userInfo)
-      console.log("id, email :" , id, email)
+      // console.log("tokens :" , tokens)
+      // console.log("useInfo :" , userInfo)
+      // console.log("id, email :" , id, email)
       const user = await User.findOneAndUpdate(
         { googleId: id },
         { googleId: id, email, accessToken: tokens.access_token, refreshToken: tokens.refresh_token },
@@ -57,7 +57,7 @@ exports.googleCallback = async (req, res) => {
       );
   
       // Return user details to the frontend
-      console.log("user",user)
+      // console.log("user",user)
       res.json({ success: true, user });
     } catch (error) {
       console.error('Error in Google Callback:', error.message);

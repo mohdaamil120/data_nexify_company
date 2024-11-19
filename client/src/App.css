@@ -50,7 +50,10 @@ body {
   padding: 20px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
    /* flex-wrap: wrap; */
+   /* overflow: scroll; */
    justify-content: space-between;
+   /* display: grid;
+   grid-template-columns: repeat(3, 1fr); */
 }
 
 
@@ -59,10 +62,11 @@ body {
   flex-direction: column;
   height: auto;
   flex: 1;
-  /* max-width:50% ; */
+  width:90% ;
   width: auto;
   box-sizing: border-box;
   /* overflow: hidden; */
+  /* border: 1px solid red; */
 }
 
 

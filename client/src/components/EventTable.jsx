@@ -26,11 +26,11 @@ const EventTable = ({ userId, isFetching }) => {
     // <div className="event-table-container">
     <div className="event-table">
       <h2>Event List</h2>
-      {error ? (
+      {/* {error ? (
         <div className="error-message">{error}</div>
       ) : events.length === 0 ? (
         <p>No events found.</p>
-      ) : (
+      ) : ( */}
         <table>
           <thead>
             <tr>
@@ -43,9 +43,10 @@ const EventTable = ({ userId, isFetching }) => {
             </tr>
           </thead>
           <tbody>
-            {events.map((event, index) => (
-              <tr key={index}>
-                <td>{event.summary}</td>
+            {/* {events.map((event, index) => ( */}
+              <tr >
+              {/* <tr key={index}> */}
+                {/* <td>{event.summary}</td>
                 <td>{event.description}</td>
                 <td>{new Date(event.start.dateTime).toLocaleString()}</td>
                 <td>{new Date(event.end.dateTime).toLocaleString()}</td>
@@ -53,12 +54,21 @@ const EventTable = ({ userId, isFetching }) => {
                 <td>
                   <button>Edit</button>
                   <button>Delete</button>
+                </td> */}
+                <td>summary</td>
+                <td>descrition lonmg long olof hjsdhsbh</td>
+                <td>24 5 6</td>
+                <td>34 465 2</td>
+                <td>example @gmial.cpom</td>
+                <td>
+                  <button>Edit</button>
+                  <button>Delete</button>
                 </td>
               </tr>
-            ))}
+            {/* ))} */}
           </tbody>
         </table>
-      )}
+      {/* )} */}
     </div>
   );
 };
