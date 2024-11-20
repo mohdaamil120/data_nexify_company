@@ -1,4 +1,3 @@
-// services/authService.js
 const { google } = require('googleapis');
 const User = require('../models/user');
 const dotenv = require('dotenv');

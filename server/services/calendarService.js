@@ -1,4 +1,3 @@
-// services/calendarService.js
 const { google } = require('googleapis');
 const User = require('../models/user');
 
